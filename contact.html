@@ -16,10 +16,7 @@
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     
     <style> 
-        .header-section h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-        }
+        
         .services, .portfolio, .about, .team, .contact   {
             padding: 90px 0;
         }
@@ -30,123 +27,6 @@
             font-size: 3rem;
             color: #f0ad4e;
             margin-bottom: 20px;
-        }
-        .timeline {
-            list-style: none;
-            padding: 0;
-            position: relative;
-        }
-        .timeline:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: #e9ecef;
-            left: 50%;
-            margin-left: -1px;
-        }
-        .timeline > li {
-            position: relative;
-            min-height: 100px;
-            margin-bottom: 50px;
-        }
-        .timeline > li:before,
-        .timeline > li:after {
-            content: " ";
-            display: table;
-        }
-        .timeline > li:after {
-            clear: both;
-        }
-        .timeline > li > .timeline-panel {
-            width: 26%;
-            float: left;
-            padding: 20px;
-            border-radius: 2px;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            margin-left: 230px;
-            
-        }
-         
-        
-        .timeline > li > .timeline-image {
-            width: 200px;
-            height: 200px;
-            left: 50%;
-            position: absolute;
-            z-index: 100;
-            background-color: #fff;
-            color: #fff;
-            border: 7px solid #e9ecef;
-            border-radius: 100%;
-            top: 20px;
-            margin-left: -100px;
-        }
-        .timeline > li > .timeline-image img {
-            width: 100%;
-            height: 100%;
-            border-radius: 100%;
-        }
-        .timeline > li.timeline-inverted > .timeline-panel {
-            float: right;
-            margin-right: 220px;
-        }
-    
-         
-        .timeline-image h4 {
-            margin-top: 0;
-            color: #fff;
-            font-size: 30px;
-            line-height: 30px;
-        }
-       
-        @media (max-width: 767px) {
-            .timeline:before {
-                left: 0;
-            }
-            .timeline > li > .timeline-panel {
-                width: calc(100% - 60px);
-                width: -moz-calc(100% - 60px);
-                width: -webkit-calc(100% - 60px);
-            }
-            .timeline > li > .timeline-image {
-                left: 0;
-                margin-left: 0;
-                width: 50px;
-                height: 50px;
-                margin-left: -25px;
-            }
-            .timeline > li.timeline-inverted > .timeline-panel {
-                float: none;
-            }
-        }
-        .social-buttons {
-            /* margin-left: 80px; */
-            list-style: none;
-            padding: 0;
-            display: flex;
-        }
-        .social-buttons li {
-            margin: 0 5px;
-        }
-        .social-buttons li a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 40px;
-            height: 40px;
-            background-color: #333;
-            color: #fff;
-            border-radius: 50%;
-            font-size: 20px;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-        .social-buttons li a:hover {
-            background-color: #555;
         }
         
     .footer-container {
@@ -172,14 +52,7 @@
             padding-left: 15px;
         }
 
-        .header-section {
-            text-align: center;
-            color: white;
-            padding: 180px 0;
-            background-image: url('assets/img/header-bg.jpg');
-            background-size: cover;
-            background-position: center;
-        }
+         
 
         @media (max-width: 992px) {
             .navbar-brand {
@@ -191,44 +64,18 @@
                 font-size: 15px;
                 gap: 20px;
             }
-            .timeline > li > .timeline-image {
-            width: 200px;
-            height: 200px;
-            left: 50%;
-            position: absolute;
-            z-index: 100;
-            background-color: #fff;
-            color: #fff;
-            border: 7px solid #e9ecef;
-            border-radius: 100%;
-            top: 20px;
-            margin-left: -100px;
-        }
+            
         }
 
         @media (max-width: 768px) {
-            .header-section {
-                padding: 120px 0;
-            }
+            
 
             .navbar-nav {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 10px;
             }
-            .timeline > li > .timeline-image {
-            width: 200px;
-            height: 200px;
-            left: 50%;
-            position: absolute;
-            z-index: 100;
-            background-color: #fff;
-            color: #fff;
-            border: 7px solid #e9ecef;
-            border-radius: 100%;
-            top: 20px;
-            margin-left: -100px;
-        }
+            
         }
 
         @media (max-width: 576px) {
@@ -250,24 +97,8 @@
             .header-section {
                 padding: 100px 0;
             }
-            .timeline > li > .timeline-image {
-            width: 200px;
-            height: 200px;
-            left: 50%;
-            position: absolute;
-            z-index: 100;
-            background-color: #fff;
-            color: #fff;
-            border: 7px solid #e9ecef;
-            border-radius: 100%;
-            top: 20px;
-            margin-left: -100px;
-        }
-        .timeline > li  {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-        }
+            
+        
         .hii{
             display: flex;
             flex-direction: colomn;
@@ -335,14 +166,7 @@
                 margin: 0 8px;
             }
         }
-        .header-section {
-            text-align: center;
-            color: white;
-            padding: 180px 0;
-            background-image: url('assets/img/header-bg.jpg');
-            background-size: cover;
-            background-position: center;
-        }
+         
         .navbar-dark .navbar-nav .nav-link {
             color: white;
         }
@@ -382,180 +206,13 @@
                 margin: 20px 0;
             }
         }
-        .team-member img {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-        }
-        .team-member h4, .team-member p {
-            text-align: center;
-        }
-        .social-buttons i {
-            font-size: 1.5em;
-        }
-        .social-buttons {
-            display: flex;
-            justify-content: center;
-        }
-        @media (max-width: 767px) {
-            .team-member {
-                margin-bottom: 30px;
-            }
-        }
-        .timeline {
-    list-style: none;
-    padding: 0;
-    position: relative;
-}
-
-.timeline:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: #e9ecef;
-    left: 50%;
-    margin-left: -1px;
-}
-
-.timeline > li {
-    position: relative;
-    min-height: 100px;
-    margin-bottom: 50px;
-}
-
-.timeline > li:before,
-.timeline > li:after {
-    content: " ";
-    display: table;
-}
-
-.timeline > li:after {
-    clear: both;
-}
-
-.timeline > li > .timeline-panel {
-    width: 26%;
-    float: left;
-    padding: 20px;
-    border-radius: 2px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin-left: 230px;
-}
-
-.timeline > li > .timeline-image {
-    width: 200px;
-    height: 200px;
-    left: 50%;
-    position: absolute;
-    z-index: 100;
-    background-color: #fff;
-    color: #fff;
-    border: 7px solid #e9ecef;
-    border-radius: 100%;
-    top: 20px;
-    margin-left: -100px;
-}
-
-.timeline > li > .timeline-image img {
-    width: 100%;
-    height: 100%;
-    border-radius: 100%;
-}
-
-.timeline > li.timeline-inverted > .timeline-panel {
-    float: right;
-    margin-right: 220px;
-}
-
-.timeline-image h4 {
-     margin-top: 55px;
-    color: #fff;
-    font-size: 30px;
-    line-height: 30px;
-}
-
+  
 /* Responsive Styles */
-@media (max-width: 992px) {
-    .timeline > li > .timeline-panel {
-        width: 70%;
-        margin-left: 0;
-    }
+ 
 
-    .timeline > li > .timeline-image {
-        width: 150px;
-        height: 150px;
-        margin-left: 200px;
-    }
-
-    /* .timeline > li.timeline-inverted > .timeline-panel {
-        margin-right: 0;
-    } */
-    
-    .timeline:before {
-        display: none;  
-    }
-    .timeline-panel {
-        position: relative; 
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
-    }
-    .timeline-image {
-        margin: 0 auto 20px;  
-    }
-    .timeline-image h4 {
-    margin-top: 0;
-    color: #fff;
-    font-size: 20px;
-    /* line-height: 30px; */
-}
-#dis{
-        display: none;
-    }
-}
-
+ 
 @media (max-width: 768px) {
-    .timeline > li > .timeline-panel {
-        width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-        margin-top: 50px;
-    }
-
-    .timeline > li > .timeline-image {
-        width: 120px;
-        height: 120px;
-        margin-left: 120px;
-        margin-bottom: 300px;
-    }
-}
-@media (max-width: 768px) {
-    .timeline:before {
-        display: none;  
-    }
-    .timeline-panel {
-        position: relative; 
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
-        size: 20px;
-    }
-    .timeline-image {
-        margin: 0 auto 20px;  
-    }
-    .timeline-image h4 {
-    margin-top: 0;
-    color: #fff;
-    font-size: 20px;
-    /* line-height: 30px; */
-
-}
+     
    .timeline > li.timeline-inverted > .timeline-panel {
         margin-right: 0;
     }
