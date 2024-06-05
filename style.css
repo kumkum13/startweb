@@ -1,0 +1,36 @@
+.header-section {
+    text-align: center;
+    color: white;
+    background-image: url('/assets/img/header-bg.jpg');  
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+}
+.header-section h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+.services {
+    padding: 50px 0;
+    text-align: center;
+}
+.services .icon {
+    font-size: 3rem;
+    color: #f0ad4e;
+    margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-container p,
+    .footer-links {
+        margin-bottom: 10px;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+}
