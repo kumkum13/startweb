@@ -15,9 +15,9 @@
     <!-- favicon -->
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     <!-- toasters link -->
-     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-
+    <!-- AOS link -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style> 
         .header-section h1 {
@@ -828,7 +828,7 @@
     <br>
     <div class="container">
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-4" data-aos="fade-up-right">
                 <div class="card" style="border: none; background-color: transparent; text-align: center;">
                 <div class="icon" style=" display: flex;
                 justify-content: center;
@@ -844,9 +844,9 @@
                 </div>
                 <h3 style="display: flex; justify-content: center;">E-Commerce</h3>
                 <p style="display: flex; justify-content: center;"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae quibusdam molestias cumque cupiditate officia. Atque tenetur et sapiente dolorum temporibus necessitatibus, nam dolore ipsa  </p>
+               </div>
             </div>
-            </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4" data-aos="fade-up">
                 <div class="card" style="border: none; background-color: transparent; text-align: center;"> 
                 <div class="icon" style=" display: flex;
                 justify-content: center;
@@ -864,7 +864,7 @@
                 <p style="display: flex; justify-content: center;"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint debitis odio corporis labore laudantium vero ducimus natus dicta quas possimus optio quisquam distinctio, ullam accusantium repellendus,  </p>
             </div>
         </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4" data-aos="fade-up-left">
                 <div class="card" style="border: none; background-color: transparent; text-align: center;"> 
                 <div class="icon" style=" display: flex;
                 justify-content: center;
@@ -966,7 +966,7 @@
                         <div class="timeline-image" id="hash1">  
                             <img class="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="about item">
                         </div>
-                        <div class="timeline-panel">
+                        <div class="timeline-panel" data-aos="zoom-in">
                             <div class="timeline-heading">
                                 <h4>2009-2011</h4>
                                 <h4 class="subheading">Our Humble Beginnings</h4>
@@ -980,7 +980,7 @@
                         <div class="timeline-image" id="hash2">
                             <img class="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="about item">
                         </div>
-                        <div class="timeline-panel">
+                        <div class="timeline-panel" data-aos="zoom-in">
                             <div class="timeline-heading">
                                 <h4>March 2013</h4>
                                 <h4 class="subheading">An Agency is Born</h4>
@@ -994,7 +994,7 @@
                         <div class="timeline-image" id="hash3">
                             <img class="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="about item">
                         </div>
-                        <div class="timeline-panel ">
+                        <div class="timeline-panel " data-aos="zoom-in">
                             <div class="timeline-heading">
                                 <h4>December 2015</h4>
                                 <h4 class="subheading">Transition to Full Service</h4>
@@ -1008,7 +1008,7 @@
                         <div class="timeline-image" id="hash4">
                             <img class="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="about item">
                         </div>
-                        <div class="timeline-panel">
+                        <div class="timeline-panel" data-aos="zoom-in">
                             <div class="timeline-heading">
                                 <h4>July 2020</h4>
                                 <h4 class="subheading">Phase Two Expansion</h4>
@@ -1041,7 +1041,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6">
                 <div class="team-member text-center">
-                    <img class="mx-auto rounded-circle" src="assets/img/team/1.jpg" alt="team-member">
+                    <img class="mx-auto rounded-circle" src="assets/img/team/1.jpg" alt="team-member" data-aos="flip-up">
                     <h4>Parveen Anand</h4>
                     <p class="text-muted">Lead Designer</p>
                     <ul class="list-inline social-buttons">
@@ -1065,7 +1065,7 @@
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="team-member text-center">
-                    <img class="mx-auto rounded-circle" src="assets/img/team/2.jpg" alt="team-member">
+                    <img class="mx-auto rounded-circle" src="assets/img/team/2.jpg" alt="team-member" data-aos="flip-up">
                     <h4>Diana Petersen</h4>
                     <p class="text-muted">Lead Marketer</p>
                     <ul class="list-inline social-buttons">
@@ -1089,7 +1089,7 @@
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="team-member text-center">
-                    <img class="mx-auto rounded-circle" src="assets/img/team/3.jpg" alt="team-member">
+                    <img class="mx-auto rounded-circle" src="assets/img/team/3.jpg" alt="team-member" data-aos="flip-up">
                     <h4>Larry Parker</h4>
                     <p class="text-muted">Lead Developer</p>
                     <ul class="list-inline social-buttons">
@@ -1310,6 +1310,10 @@
 <script src="script.js"></script>
 <!-- toaster js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
+<!-- AOS js -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script>
 </body>
 </html>
