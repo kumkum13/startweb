@@ -14,9 +14,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- favicon -->
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <!-- Include FontAwesome CSS for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     
     <style> 
-        
+        .header-section h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
         .services, .portfolio, .about, .team, .contact   {
             padding: 90px 0;
         }
@@ -27,6 +33,123 @@
             font-size: 3rem;
             color: #f0ad4e;
             margin-bottom: 20px;
+        }
+        .timeline {
+            list-style: none;
+            padding: 0;
+            position: relative;
+        }
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #e9ecef;
+            left: 50%;
+            margin-left: -1px;
+        }
+        .timeline > li {
+            position: relative;
+            min-height: 100px;
+            margin-bottom: 50px;
+        }
+        .timeline > li:before,
+        .timeline > li:after {
+            content: " ";
+            display: table;
+        }
+        .timeline > li:after {
+            clear: both;
+        }
+        .timeline > li > .timeline-panel {
+            width: 26%;
+            float: left;
+            padding: 20px;
+            border-radius: 2px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            margin-left: 230px;
+            
+        }
+         
+        
+        .timeline > li > .timeline-image {
+            width: 200px;
+            height: 200px;
+            left: 50%;
+            position: absolute;
+            z-index: 100;
+            background-color: #fff;
+            color: #fff;
+            border: 7px solid #e9ecef;
+            border-radius: 100%;
+            top: 20px;
+            margin-left: -100px;
+        }
+        .timeline > li > .timeline-image img {
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+        }
+        .timeline > li.timeline-inverted > .timeline-panel {
+            float: right;
+            margin-right: 220px;
+        }
+    
+         
+        .timeline-image h4 {
+            margin-top: 0;
+            color: #fff;
+            font-size: 30px;
+            line-height: 30px;
+        }
+       
+        @media (max-width: 767px) {
+            .timeline:before {
+                left: 0;
+            }
+            .timeline > li > .timeline-panel {
+                width: calc(100% - 60px);
+                width: -moz-calc(100% - 60px);
+                width: -webkit-calc(100% - 60px);
+            }
+            .timeline > li > .timeline-image {
+                left: 0;
+                margin-left: 0;
+                width: 50px;
+                height: 50px;
+                margin-left: -25px;
+            }
+            .timeline > li.timeline-inverted > .timeline-panel {
+                float: none;
+            }
+        }
+        .social-buttons {
+            /* margin-left: 80px; */
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+        .social-buttons li {
+            margin: 0 5px;
+        }
+        .social-buttons li a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 50%;
+            font-size: 20px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .social-buttons li a:hover {
+            background-color: #555;
         }
         
     .footer-container {
@@ -52,7 +175,14 @@
             padding-left: 15px;
         }
 
-         
+        .header-section {
+            text-align: center;
+            color: white;
+            padding: 180px 0;
+            background-image: url('assets/img/header-bg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
 
         @media (max-width: 992px) {
             .navbar-brand {
@@ -64,18 +194,44 @@
                 font-size: 15px;
                 gap: 20px;
             }
-            
+            .timeline > li > .timeline-image {
+            width: 200px;
+            height: 200px;
+            left: 50%;
+            position: absolute;
+            z-index: 100;
+            background-color: #fff;
+            color: #fff;
+            border: 7px solid #e9ecef;
+            border-radius: 100%;
+            top: 20px;
+            margin-left: -100px;
+        }
         }
 
         @media (max-width: 768px) {
-            
+            .header-section {
+                padding: 120px 0;
+            }
 
             .navbar-nav {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 10px;
             }
-            
+            .timeline > li > .timeline-image {
+            width: 200px;
+            height: 200px;
+            left: 50%;
+            position: absolute;
+            z-index: 100;
+            background-color: #fff;
+            color: #fff;
+            border: 7px solid #e9ecef;
+            border-radius: 100%;
+            top: 20px;
+            margin-left: -100px;
+        }
         }
 
         @media (max-width: 576px) {
@@ -97,8 +253,24 @@
             .header-section {
                 padding: 100px 0;
             }
-            
-        
+            .timeline > li > .timeline-image {
+            width: 200px;
+            height: 200px;
+            left: 50%;
+            position: absolute;
+            z-index: 100;
+            background-color: #fff;
+            color: #fff;
+            border: 7px solid #e9ecef;
+            border-radius: 100%;
+            top: 20px;
+            margin-left: -100px;
+        }
+        .timeline > li  {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
         .hii{
             display: flex;
             flex-direction: colomn;
@@ -166,7 +338,14 @@
                 margin: 0 8px;
             }
         }
-         
+        .header-section {
+            text-align: center;
+            color: white;
+            padding: 180px 0;
+            background-image: url('assets/img/header-bg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
         .navbar-dark .navbar-nav .nav-link {
             color: white;
         }
@@ -206,13 +385,180 @@
                 margin: 20px 0;
             }
         }
-  
-/* Responsive Styles */
- 
+        .team-member img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+        }
+        .team-member h4, .team-member p {
+            text-align: center;
+        }
+        .social-buttons i {
+            font-size: 1.5em;
+        }
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+        }
+        @media (max-width: 767px) {
+            .team-member {
+                margin-bottom: 30px;
+            }
+        }
+        .timeline {
+    list-style: none;
+    padding: 0;
+    position: relative;
+}
 
- 
+.timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #e9ecef;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.timeline > li {
+    position: relative;
+    min-height: 100px;
+    margin-bottom: 50px;
+}
+
+.timeline > li:before,
+.timeline > li:after {
+    content: " ";
+    display: table;
+}
+
+.timeline > li:after {
+    clear: both;
+}
+
+.timeline > li > .timeline-panel {
+    width: 26%;
+    float: left;
+    padding: 20px;
+    border-radius: 2px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 230px;
+}
+
+.timeline > li > .timeline-image {
+    width: 200px;
+    height: 200px;
+    left: 50%;
+    position: absolute;
+    z-index: 100;
+    background-color: #fff;
+    color: #fff;
+    border: 7px solid #e9ecef;
+    border-radius: 100%;
+    top: 20px;
+    margin-left: -100px;
+}
+
+.timeline > li > .timeline-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+
+.timeline > li.timeline-inverted > .timeline-panel {
+    float: right;
+    margin-right: 220px;
+}
+
+.timeline-image h4 {
+     margin-top: 55px;
+    color: #fff;
+    font-size: 30px;
+    line-height: 30px;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .timeline > li > .timeline-panel {
+        width: 70%;
+        margin-left: 0;
+    }
+
+    .timeline > li > .timeline-image {
+        width: 150px;
+        height: 150px;
+        margin-left: 200px;
+    }
+
+    /* .timeline > li.timeline-inverted > .timeline-panel {
+        margin-right: 0;
+    } */
+    
+    .timeline:before {
+        display: none;  
+    }
+    .timeline-panel {
+        position: relative; 
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+    .timeline-image {
+        margin: 0 auto 20px;  
+    }
+    .timeline-image h4 {
+    margin-top: 0;
+    color: #fff;
+    font-size: 20px;
+    /* line-height: 30px; */
+}
+#dis{
+        display: none;
+    }
+}
+
 @media (max-width: 768px) {
-     
+    .timeline > li > .timeline-panel {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 50px;
+    }
+
+    .timeline > li > .timeline-image {
+        width: 120px;
+        height: 120px;
+        margin-left: 120px;
+        margin-bottom: 300px;
+    }
+}
+@media (max-width: 768px) {
+    .timeline:before {
+        display: none;  
+    }
+    .timeline-panel {
+        position: relative; 
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        size: 20px;
+    }
+    .timeline-image {
+        margin: 0 auto 20px;  
+    }
+    .timeline-image h4 {
+    margin-top: 0;
+    color: #fff;
+    font-size: 20px;
+    /* line-height: 30px; */
+
+}
    .timeline > li.timeline-inverted > .timeline-panel {
         margin-right: 0;
     }
@@ -359,16 +705,38 @@
         }
 
         .toast.success {
-            background-color: #28a745;
+            background-color: #1fae40;
         }
 
         .toast.error {
-            background-color: #dc3545;
+            background-color: #ff2b40;
         }
- 
+        @media (max-width: 768px) {
+        #toast-box {
+        top: 60px;
+        bottom: auto;
+        right: 30px;
+        align-items: flex-start; /* Align toasts to the top right corner */
+        flex-direction: column;
+         }
+     }
+      
+      /* Media queries to set Toastr position */
+    @media (max-width: 767px) {
+        .toast-top-right {
+            top: 50px;
+            right: 12px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .toast-bottom-right {
+            bottom: 50px;
+            right: 12px;
+        }
+    }
  
      
- 
     </style>
 </head>
 <body>
@@ -403,7 +771,7 @@
          
     </div>
 
-  
+ 
 <!-- Contact Section -->
 <section id="contact" class="contact bg-dark text-white py-5" style="background-image: url('assets/img/map-image.png');">
     <div class="container">
@@ -415,27 +783,27 @@
                 <form id="contactForm">
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="firstName">First Name</label>
+                            <label for="firstName">First Name <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Your First Name">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="lastName">Last Name</label>
+                            <label for="lastName">Last Name <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Your Last Name">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="phone">Your Phone</label>
+                            <label for="phone">Your Phone <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="phone" name="phone" placeholder="Your Phone">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="email">Your Email</label>
+                            <label for="email">Your Email <span class="text-danger">*</span></label>
                             <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-12">
-                            <label for="message">Your Message</label>
+                            <label for="message">Your Message <span class="text-danger">*</span></label>
                             <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your Message"></textarea>
                         </div>
                     </div>
@@ -447,55 +815,106 @@
         </div>
     </div>
 </section>
-<div id="toast-box"></div>
-<script>
-   function createToast(message, type) {
-            const toast = document.createElement('div');
-            toast.className = `toast ${type}`;
-            toast.textContent = message;
-            document.getElementById('toast-box').appendChild(toast);
-            setTimeout(() => toast.classList.add('show'), 100);
-            setTimeout(() => {
-                toast.classList.remove('show');
-                setTimeout(() => toast.remove(), 300);
-            }, 3000);
-        }
 
+<!-- Include jQuery and Toastr JS/CSS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+<script>
     function validateForm(event) {
         event.preventDefault(); // Prevent form submission
 
-        const firstName = document.getElementById("firstName").value;
-        const lastName = document.getElementById("lastName").value;
-        const phone = document.getElementById("phone").value;
-        const email = document.getElementById("email").value;
-        const message = document.getElementById("message").value;
+        const firstName = document.getElementById("firstName").value.trim();
+        const lastName = document.getElementById("lastName").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
 
         if (!firstName || !lastName || !phone || !email || !message) {
-            createToast("All fields are required!", "error");
+            toastr.error("All fields are required!");
             return false;
         }
 
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        // Check for leading white spaces or numbers in first name
+        if (/^\s/.test(firstName) || /^\d/.test(firstName)) {
+            toastr.error("First name cannot start with white space or numbers!");
+            return false;
+        }
+
+        // Check for leading white spaces or numbers in last name
+        if (/^\s/.test(lastName) || /^\d/.test(lastName)) {
+            toastr.error("Last name cannot start with white space or numbers!");
+            return false;
+        }
+
+        // Check for leading white spaces in message
+        if (/^\s/.test(message)) {
+            toastr.error("Message cannot start with white space!");
+            return false;
+        }
+
+        // Check for non-text characters in first name
+        if (!/^[a-zA-Z]+$/.test(firstName)) {
+            toastr.error("First name can only contain letters and no white spaces!");
+            return false;
+        }
+
+        // Check for non-text characters in last name
+        if (!/^[a-zA-Z]+$/.test(lastName)) {
+            toastr.error("Last name can only contain letters and no white spaces!");
+            return false;
+        }
+
+        const emailPattern = /^[a-zA-Z0-9][^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailPattern.test(email)) {
-            createToast("Please enter a valid email address!", "error");
+            toastr.error("Please enter a valid email address!");
             return false;
         }
 
         const phonePattern = /^\d{10}$/;
         if (!phonePattern.test(phone)) {
-            createToast("Please enter a valid 10-digit phone number!", "error");
+            toastr.error("Please enter a valid 10-digit phone number!");
             return false;
         }
 
-        createToast("Form submitted successfully!", "success");
+        toastr.success("Form submitted successfully!");
+        document.getElementById('contactForm').reset(); // Clear the form
         return true;
     }
 
     document.getElementById('contactForm').addEventListener('submit', validateForm);
+
+    // Toastr default options
+    toastr.options = {
+        'closeButton': true,
+        'debug': false,
+        'newestOnTop': false,
+        'progressBar': false,
+        'positionClass': 'toast-top-right',
+        'preventDuplicates': false,
+        'showDuration': '300',
+        'hideDuration': '1000',
+        'timeOut': '5000',
+        'extendedTimeOut': '1000',
+        'showEasing': 'swing',
+        'hideEasing': 'linear',
+        'showMethod': 'fadeIn',
+        'hideMethod': 'fadeOut'
+    }
+     // Update Toastr position based on window size
+     function updateToastrPosition() {
+        if (window.innerWidth <= 767) {
+            toastr.options.positionClass = 'toast-top-right';
+        } else {
+            toastr.options.positionClass = 'toast-bottom-right';
+        }
+    }
+
+    // Call updateToastrPosition on load and on resize
+    window.onload = updateToastrPosition;
+    window.onresize = updateToastrPosition;
 </script>
-
-
-
 <!-- Footer -->
 <footer class="footer text-center py-3">
     <div class="container">

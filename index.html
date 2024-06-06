@@ -16,7 +16,7 @@
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     <!-- toasters link -->
      
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
     
     <style> 
@@ -713,6 +713,44 @@
         .toast.error {
             background-color: #dc3545;
         }
+        .toast i {
+            margin-right: 10px;
+        }
+        .toast span {
+            margin-right: 25px;
+        }
+
+        .toast .close-btn {
+            margin-left: auto;
+            background: none;
+            border: none;
+            color: inherit;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+        #toast-box {
+        top: 60px;
+        bottom: auto;
+        right: 30px;
+        align-items: flex-start; /* Align toasts to the top right corner */
+        flex-direction: column;
+         }
+     }
+  /* Media queries to set Toastr position */
+  @media (max-width: 767px) {
+        .toast-top-right {
+            top: 50px;
+            right: 12px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .toast-bottom-right {
+            bottom: 50px;
+            right: 12px;
+        }
+    }
  
     </style>
 </head>
@@ -1069,27 +1107,27 @@
                 <form id="contactForm">
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="firstName">First Name</label>
+                            <label for="firstName">First Name <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Your First Name">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="lastName">Last Name</label>
+                            <label for="lastName">Last Name <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Your Last Name">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="phone">Your Phone</label>
+                            <label for="phone">Your Phone <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="phone" name="phone" placeholder="Your Phone">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="email">Your Email</label>
+                            <label for="email">Your Email <span class="text-danger">*</span></label>
                             <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-12">
-                            <label for="message">Your Message</label>
+                            <label for="message">Your Message <span class="text-danger">*</span></label>
                             <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your Message"></textarea>
                         </div>
                     </div>
@@ -1103,10 +1141,37 @@
 </section>
 <div id="toast-box"></div>
 <script>
-   function createToast(message, type) {
+    function createToast(message, type) {
             const toast = document.createElement('div');
             toast.className = `toast ${type}`;
-            toast.textContent = message;
+
+            // Icon
+            const icon = document.createElement('i');
+            if (type === 'success') {
+                icon.className = 'fas fa-check-circle';
+            } else if (type === 'error') {
+                icon.className = 'fas fa-exclamation-circle';
+            } else if (type === 'warning') {
+                icon.className = 'fas fa-exclamation-triangle';
+            } else if (type === 'info') {
+                icon.className = 'fas fa-info-circle';
+            }
+            
+            // Message text
+            const text = document.createElement('span');
+            text.textContent = message;
+
+            // Close button
+            const closeButton = document.createElement('button');
+            closeButton.className = 'close-btn';
+            closeButton.innerHTML = '&times;';
+            closeButton.onclick = () => toast.remove();
+
+            // Append elements to toast
+            toast.appendChild(icon);
+            toast.appendChild(text);
+            toast.appendChild(closeButton);
+            
             document.getElementById('toast-box').appendChild(toast);
             setTimeout(() => toast.classList.add('show'), 100);
             setTimeout(() => {
@@ -1129,7 +1194,37 @@
             return false;
         }
 
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+// Check for leading white spaces or numbers in first name
+        if (/^\s/.test(firstName) || /^\d/.test(firstName)) {
+            createToast("First name cannot start with white space or numbers!");
+        return false;
+    }
+
+    // Check for leading white spaces or numbers in last name
+    if (/^\s/.test(lastName) || /^\d/.test(lastName)) {
+        createToast("Last name cannot start with white space or numbers!");
+        return false;
+    }
+    if (/^\s/.test(message) ) {
+        createToast("message name cannot accept with white space ");
+        return false;
+    }
+       // Check for non-text characters in first name
+    if (!/^[a-zA-Z]+$/.test(firstName)) {
+        createToast("First name can only contain letters and no white spaces!");
+        return false;
+    }
+
+    // Check for non-text characters in last name
+    if (!/^[a-zA-Z]+$/.test(lastName)) {
+        createToast("Last name can only contain letters and no white spaces!");
+        return false;
+    }
+
+ 
+
+        const emailPattern = /^[a-zA-Z0-9][^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailPattern.test(email)) {
             createToast("Please enter a valid email address!", "error");
             return false;
@@ -1142,14 +1237,12 @@
         }
 
         createToast("Form submitted successfully!", "success");
+        document.getElementById('contactForm').reset(); // Clear the form
         return true;
     }
 
     document.getElementById('contactForm').addEventListener('submit', validateForm);
 </script>
-
-
- 
 
 <!-- Footer -->
 <footer class="footer text-center py-3">
