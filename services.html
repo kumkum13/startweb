@@ -697,7 +697,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="services.html">SERVICES</a>
+                        <a  class="nav-link" href="services.html">SERVICES</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="portfolio.html">PORTFOLIO</a>
@@ -842,6 +842,14 @@
 <script>
     $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+<script>
+    // Initialize popovers
+    $(document).ready(function () {
+        $('[data-toggle="popover"]').popover({
+            trigger: 'hover' // Show popover on hover
+        });
     });
 </script>
 </body>
