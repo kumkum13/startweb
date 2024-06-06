@@ -749,6 +749,17 @@
         .navbar-toggler{
             margin-right: 20px;
         }
+        #line{
+            display: flex;
+            flex-direction: row;
+        }
+    }
+    @media (min-width: 992px){
+         
+        #line{
+            display: flex;
+            flex-direction: row;
+        }
     }
 
     @media (min-width: 768px) {
@@ -756,6 +767,7 @@
             bottom: 50px;
             right: 12px;
         }
+        
     }
  
     </style>
@@ -1271,8 +1283,12 @@
                 </a>
             </li>
         </ul>
-        <p class="m-4">Privacy Policy</p>
-        <p class="m-0">Terms of Use</p>
+        <div id="line">
+        <p class="m-3">Privacy Policy</p>
+        <p class="m-3">Terms of Use</p>
+
+        </div>
+         
     </div>
 </footer>
 
