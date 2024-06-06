@@ -752,6 +752,27 @@
             flex-direction: row;
         }
     }
+    .ticker-container {
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+.ticker {
+    white-space: nowrap;
+    display: inline-block;
+    padding-right: 100%;
+    animation: tickerAnimation 10s linear infinite;
+}
+
+.ticker span {
+    padding: 0 20px; /* Adjust padding as needed */
+    border-right: 1px solid #ccc; /* Add border between ticker items */
+}
+
+@keyframes tickerAnimation {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
 
      
     </style>
@@ -786,6 +807,19 @@
         </nav>
     
          
+    </div>
+    <div class="ticker-container">
+        <div class="ticker">
+            <span>This is a ticker message. </span>
+            <span>This is another ticker message. </span>
+            <span>And another one. </span>
+            <span>This is a ticker message. </span>
+            <span>This is another ticker message. </span>
+            <span>And another one. </span>
+            <span>This is a ticker message. </span>
+            <span>This is another ticker message. </span>
+            <span>And another one. </span>
+        </div>
     </div>
 
  

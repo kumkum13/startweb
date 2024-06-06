@@ -15,6 +15,7 @@
     <!-- favicon -->
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     
+    
     <style> 
         .header-section h1 {
             font-size: 3.5rem;
@@ -735,7 +736,7 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="card" style="border: none; background-color: transparent; text-align: center;">
-                <div class="icon" style=" display: flex;
+                <div data-toggle="tooltip" data-placement="top" title="E-Commerce services" class="icon" style=" display: flex;
                 justify-content: center;
                 align-items: center;
                 width: 100px;
@@ -744,7 +745,7 @@
                 border-radius: 50%;
                 background-color: #ffc107;
                 color: white;
-                font-size: 40px;">
+                font-size: 40px;" >
                     <i class="fas fa-shopping-cart"></i>
                 </div>
                 <h3 style="display: flex; justify-content: center;">E-Commerce</h3>
@@ -753,7 +754,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="card" style="border: none; background-color: transparent; text-align: center;"> 
-                <div class="icon" style=" display: flex;
+                <div data-toggle="tooltip" data-placement="top" title="Responsive Design services" class="icon" style=" display: flex;
                 justify-content: center;
                 align-items: center;
                 width: 100px;
@@ -762,7 +763,7 @@
                 border-radius: 50%;
                 background-color: #ffc107;
                 color: white;
-                font-size: 40px;">
+                font-size: 40px;"  >
                     <i class="fas fa-laptop"></i>
                 </div>
                 <h3 style="display: flex; justify-content: center;">Responsive Design</h3>
@@ -771,7 +772,7 @@
         </div>
             <div class="col-lg-4">
                 <div class="card" style="border: none; background-color: transparent; text-align: center;"> 
-                <div class="icon" style=" display: flex;
+                <div data-toggle="tooltip" data-placement="top" title="Web Security services" class="icon" style=" display: flex;
                 justify-content: center;
                 align-items: center;
                 width: 100px;
@@ -791,6 +792,7 @@
     </div>
 </section>
 </div>
+ 
  
 <!-- logo section  -->
 <section id="logo" class="logo bg-light">
@@ -836,5 +838,11 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="script.js"></script>
+<!-- tooltip -->
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
 </body>
 </html>
