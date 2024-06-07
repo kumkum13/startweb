@@ -687,6 +687,82 @@
      
  
     </style>
+    <style>
+        /* Add your custom CSS styles here */
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+        }
+        .delete-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 50%;
+            padding: 5px;
+            cursor: pointer;
+        }
+        .delete-button:hover {
+            background-color: rgba(255, 0, 0, 0.8);
+            color: white;
+        }
+        .upload-section {
+            margin-top: 50px;
+            text-align: center;
+        }
+        .drag-drop-box {
+            border: 2px dashed #aaa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        .drag-drop-box:hover {
+            background-color: #f0f0f0;
+        }
+        .image-card {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .image-card img {
+            width: 100%;
+            height: auto;
+        }
+        .delete-button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 50%;
+            padding: 5px;
+            cursor: pointer;
+        }
+        .delete-button:hover {
+            background-color: rgba(255, 0, 0, 0.8);
+            color: white;
+        }
+        /* Add your custom CSS styles here */
+.upload-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upload-button:hover {
+    background-color: #0056b3;
+}
+
+
+        
+    </style>
 </head>
 <body>
     <div style="background-image: url('https://img.freepik.com/free-vector/seamless-gold-rhombus-grid-pattern-black-background_53876-97589.jpg');">
@@ -727,13 +803,21 @@
         </header>
     </div>
 
- 
-
-<!-- Portfolio Section -->
+    <!-- Portfolio Section -->
 <section id="portfolio" class="portfolio   " >
     <div class="container">
         <h1 style="display: flex; justify-content: center; align-items: center; font-size: 40px;">PORTFOLIO</h1>
         <p style="display: flex; justify-content: center;">Lorem ipsum dolor sit amet consectetur.</p>
+        <br>
+        <div class="container">
+    
+            <div id="dragDropBox" class="drag-drop-box">
+                <p style="font-size: 20px;">Drag & Drop Images Here</p>
+                <input type="file" id="fileInput" style="display: none;" multiple>
+                <button onclick="document.getElementById('fileInput').click()" class="upload-button">Browse  Images</button>
+            </div>
+            <div id="previewContainer" class="row"></div>
+        </div>
         <br>
         <div class="row">
             <div class="col-lg-4 col-md-6" style="margin-bottom: 20px;">
@@ -742,7 +826,7 @@
                     <img src="assets/img/portfolio/1.jpg" class="card-img-top img-fluid" alt="Portfolio Item">
                     <div class="card-body" >
                         <h4 class="card-title" style="display: flex; justify-content: center;">Threads</h4>
-                        <p class="card-text" style="display: flex; justify-content: center;">Illustration</p>
+                        
                     </div>
                 </div>
             </div>
@@ -751,7 +835,7 @@
                     <img src="assets/img/portfolio/2.jpg" class="card-img-top img-fluid" alt="Portfolio Item">
                     <div class="card-body">
                         <h4 class="card-title" style="display: flex; justify-content: center;">Explore</h4>
-                        <p class="card-text" style="display: flex; justify-content: center;">Graphic Design</p>
+                         
                     </div>
                 </div>
             </div>
@@ -760,7 +844,7 @@
                     <img src="assets/img/portfolio/3.jpg" class="card-img-top img-fluid" alt="Portfolio Item">
                     <div class="card-body">
                         <h4 class="card-title" style="display: flex; justify-content: center;">Finish</h4>
-                        <p class="card-text" style="display: flex; justify-content: center;">Identity</p>
+                         
                     </div>
                 </div>
             </div>
@@ -769,7 +853,7 @@
                     <img src="assets/img/portfolio/4.jpg" class="card-img-top img-fluid" alt="Portfolio Item">
                     <div class="card-body">
                         <h4 class="card-title" style="display: flex; justify-content: center;">Lines</h4>
-                        <p class="card-text" style="display: flex; justify-content: center;">Branding</p>
+                         
                     </div>
                 </div>
             </div>
@@ -778,27 +862,102 @@
                     <img src="assets/img/portfolio/5.jpg" class="card-img-top img-fluid" alt="Portfolio Item">
                     <div class="card-body">
                         <h4 class="card-title" style="display: flex; justify-content: center;">Southwest</h4>
-                        <p class="card-text" style="display: flex; justify-content: center;">Website Design</p>
+                         
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6"  >
                 <div class="card portfolio-item">
                     <img src="assets/img/portfolio/6.jpg" class="card-img-top img-fluid" alt="Portfolio Item">
                     <div class="card-body">
                         <h4 class="card-title" style="display: flex; justify-content: center;">Window</h4>
-                        <p class="card-text" style="display: flex; justify-content: center;">Photography</p>
+                         
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div >
 </section>
- 
 
+
+     
+    <script>
+        // Add your JavaScript logic here
+        const dragDropBox = document.getElementById('dragDropBox');
+        const fileInput = document.getElementById('fileInput');
+        const previewContainer = document.getElementById('previewContainer');
+
+        dragDropBox.addEventListener('dragover', function (e) {
+            e.preventDefault();
+            dragDropBox.classList.add('drag-over');
+        });
+
+        dragDropBox.addEventListener('dragleave', function () {
+            dragDropBox.classList.remove('drag-over');
+        });
+
+        dragDropBox.addEventListener('drop', function (e) {
+            e.preventDefault();
+            dragDropBox.classList.remove('drag-over');
+            const files = e.dataTransfer.files;
+            handleFiles(files);
+        });
+
+        fileInput.addEventListener('change', function () {
+            const files = this.files;
+            handleFiles(files);
+        });
+
+        function handleFiles(files) {
+            if (files) {
+                Array.from(files).forEach(file => {
+                    const reader = new FileReader();
+                    reader.onload = function () {
+                        const imageSrc = reader.result;
+                        const fileName = file.name; // Extract file name
+                    const card = createPortfolioCard(imageSrc, fileName);
+                         
+                        previewContainer.appendChild(card);
+                    };
+                    reader.readAsDataURL(file);
+                });
+            }
+        }
+
+        function createPortfolioCard(imageSrc,fileName) {
+            const card = document.createElement('div');
+            card.classList.add('col-lg-4', 'col-md-6', 'image-card');
+            card.innerHTML = `
+                <div class="card"    >
+                <img src="${imageSrc}" class="card-img-top" alt="Portfolio Item">
+                <div class="card-body">
+                    <h4 class="card-title" style="display: flex; justify-content: center;" >${fileName}</h4> <!-- Display file name as title -->
+                    <button class="delete-button" onclick="deleteImage(this)">X</button>
+                </div>
+            </div>
+            
+            `;
+            return card;
+        }
+        
+
+        function deleteImage(button) {
+    const card = button.closest('.image-card');
+    console.log(card);
+    if (card) {
+        previewContainer.removeChild(card);
+    } else {
+        console.error('Parent card not found');
+    }
+}
+
+    </script>
+ 
+ 
+ 
  
 <!-- logo section  -->
-<section id="logo" class="logo bg-light">
+<section id="logo" class="logo bg-light"  >
     <img src="assets/img/logos/microsoft.svg" alt="microsoft-logo">
     <img src="assets/img/logos/google.svg" alt="google-logo">
     <img src="assets/img/logos/facebook.svg" alt="facebook-logo">
