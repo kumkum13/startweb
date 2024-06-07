@@ -768,7 +768,7 @@
     white-space: nowrap;
     display: inline-block;
     padding-right: 100%;
-    animation: tickerAnimation 10s linear infinite;
+    animation: tickerAnimation 20s linear infinite;
 }
 
 .ticker span {
@@ -964,7 +964,7 @@
     }
      // Update Toastr position based on window size
      function updateToastrPosition() {
-        if (window.innerWidth <= 767) {
+        if (window.innerWidth <= 2000 ) {
             toastr.options.positionClass = 'toast-top-right';
         } else {
             toastr.options.positionClass = 'toast-bottom-right';
