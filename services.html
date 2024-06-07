@@ -16,7 +16,10 @@
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     <!-- AOS link -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+    <!-- Include FontAwesome for the down arrow icon -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+<!-- select 2 (dropdown) -->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     
     
     <style> 
@@ -688,6 +691,13 @@
      
  
     </style>
+     
+<style>
+    .select2-container {
+        z-index: 2050; 
+         
+    }
+    </style>
 </head>
 <body>
     <div style="background-image: url('/assets/service-header.jpg');">
@@ -723,12 +733,49 @@
             <div class="container">
                 <h2>Welcome To Our Studio!</h2>
                 <h1>Check Out Our Services</h1>
-                 
+                <br>
+                <a href="#" role="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#videoModal" >Brief intro</a>
                  
             </div>
         </header>
     </div>
-
+<!-- Modal -->
+<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="videoModalLabel">Brief Intro</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <video class="embed-responsive-item" id="video" src="assets/modle vedio.mp4" autoplay muted controls></video>
+                </div>
+                <br>
+                <label for="videoSizeSelect">Select Video Size:</label>
+                <div class="input-group">
+                    <select id="videoSizeSelect" class="form-control select2">
+                        <option value="embed-responsive-16by9">16:9</option>
+                        <option value="embed-responsive-4by3">4:3</option>
+                        <option value="embed-responsive-1by1">1:1</option>
+                        <option value="embed-responsive-21by9">21:9</option>
+                        <option value="embed-responsive-32by9">32:9</option>
+                        <option value="embed-responsive-3by2">3:2</option>
+                        <option value="embed-responsive-18by9">18:9</option>
+                        <option value="embed-responsive-2by1">2:1</option>
+                        <option value="embed-responsive-5by4">5:4</option>
+                        <option value="embed-responsive-16by10">16:10</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Services Section -->
 <div > 
 <section id="services" class="services  "  >
@@ -852,6 +899,45 @@
 <script>
     AOS.init();
   </script>
+   
+    <!-- <script>
+        $(document).ready(function(){
+            $('#videoModal').on('hide.bs.modal', function () {
+                var video = document.getElementById('video');
+                video.pause();
+                video.currentTime = 0;
+            });
+        
+            $('#videoSizeSelect').on('change', function() {
+                var selectedClass = $(this).val();
+                $('#video').parent().attr('class', 'embed-responsive ' + selectedClass);
+            });
+        });
+        </script> -->
+        <!-- Initialize Select2 and Modal Video Size Change -->
+<script>
+    $(document).ready(function(){
+        // Initialize Select2
+        $('.select2').select2();
+    
+        // Pause video on modal close
+        $('#videoModal').on('hide.bs.modal', function () {
+            var video = document.getElementById('video');
+            video.pause();
+            video.currentTime = 0;
+        });
+    
+        // Change video size
+        $('#videoSizeSelect').on('change', function() {
+            var selectedClass = $(this).val();
+            $('#video').parent().attr('class', 'embed-responsive ' + selectedClass);
+        });
+    });
+    </script>
+
+    <!-- select 2 js -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        
   
  
 </body>
