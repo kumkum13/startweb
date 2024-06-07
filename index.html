@@ -815,7 +815,10 @@
                 <h2>Welcome To Our Studio!</h2>
                 <h1>It's Nice To Meet You</h1>
                 <br>
-                <a href="#" class="btn btn-warning btn-lg">Tell Me More</a>
+                <a href="#" role="button" class="btn btn-warning btn-lg"  data-toggle="popover" title="popover"
+                data-bs-placement="bottom" 
+                 data-bs-content="Here is some more information about what we do.">Tell Me More</a>
+                
             </div>
         </header>
     </div>
@@ -830,7 +833,7 @@
         <div class="row">
             <div class="col-lg-4"  data-aos="fade-up">
                 <div class="card" style="border: none; background-color: transparent; text-align: center;">
-                <div class="icon" style=" display: flex;
+                <div class="icon" data-toggle="tooltip" data-placement="top" title="E-Commerce services" style=" display: flex;
                 justify-content: center;
                 align-items: center;
                 width: 100px;
@@ -848,7 +851,7 @@
             </div>
             <div class="col-lg-4" data-aos="fade-up" >
                 <div class="card" style="border: none; background-color: transparent; text-align: center;"> 
-                <div class="icon" style=" display: flex;
+                <div class="icon" data-toggle="tooltip" data-placement="top" title="Responsive Design services" style=" display: flex;
                 justify-content: center;
                 align-items: center;
                 width: 100px;
@@ -866,7 +869,7 @@
         </div>
             <div class="col-lg-4" data-aos="fade-up">
                 <div class="card" style="border: none; background-color: transparent; text-align: center;"> 
-                <div class="icon" style=" display: flex;
+                <div data-toggle="tooltip" data-placement="top" title="Web Security services" class="icon" style=" display: flex;
                 justify-content: center;
                 align-items: center;
                 width: 100px;
@@ -1315,5 +1318,18 @@
 <script>
     AOS.init();
   </script>
+  <script>
+    // Initialize popovers
+    $(document).ready(function () {
+        $('[data-toggle="popover"]').popover();
+    });
+</script>
+<!-- tooltip -->
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+
 </body>
 </html>
